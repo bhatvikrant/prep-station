@@ -20,7 +20,13 @@ const Navbar: React.FC = () => {
       <Link href="/">
         <a>
           <div className="flex items-center space-x-4">
-            <Image src="/logo.png" layout="fixed" height="50" width="100" />
+            <Image
+              src="/logo.png"
+              layout="fixed"
+              height="50"
+              width="100"
+              alt="Prep Station logo"
+            />
             <p className="font-bold text-xl md:text-2xl">Prep Station</p>
           </div>
         </a>
@@ -58,7 +64,13 @@ const Navbar: React.FC = () => {
       >
         <div className="px-8 py-4">
           <div>
-            <Image src="/logo.png" layout="fixed" height="100" width="200" />
+            <Image
+              src="/logo.png"
+              layout="fixed"
+              height="100"
+              width="200"
+              alt="Prep Station logo"
+            />
           </div>
           {navLinks.map((link) => (
             <div key={link.label} className="my-2">
