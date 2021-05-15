@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 // ICONS
 import { MenuIcon } from '@heroicons/react/solid'
@@ -16,9 +17,14 @@ const Navbar: React.FC = () => {
   return (
     <div className="flex justify-between bg-black text-white px-8 py-4">
       {/* ======= LOGO ======= */}
-      <div className="flex items-center  space-x-4 cursor-pointer">
-        <p className="hover:font-bold">LOGO</p>
-      </div>
+      <Link href="/">
+        <a>
+          <div className="flex items-center space-x-4">
+            <Image src="/logo.png" layout="fixed" height="50" width="100" />
+            <p className="font-bold text-xl md:text-2xl">Prep Station</p>
+          </div>
+        </a>
+      </Link>
 
       {/* ======= HAMBURGER MENU (MOBILE) ======= */}
       <div className="flex items-center space-x-4 cursor-pointer">
@@ -51,6 +57,9 @@ const Navbar: React.FC = () => {
         onOpen={() => setShowSidebar(true)}
       >
         <div className="px-8 py-4">
+          <div>
+            <Image src="/logo.png" layout="fixed" height="100" width="200" />
+          </div>
           {navLinks.map((link) => (
             <div key={link.label} className="my-2">
               <Link href={link.url}>
