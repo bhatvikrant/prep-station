@@ -2,8 +2,8 @@
 // import Image from 'next/image'
 
 export const Home = (): JSX.Element => (
-  <div>
-    home
+  <div className="p-16">
+    <h1>home</h1>
   </div>
 )
 
