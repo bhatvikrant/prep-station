@@ -16,6 +16,9 @@ const HowWeCanAssistYou: React.FC = () => {
       <Slider {...settings}>
         <div>
           <h3>1</h3>
+          <div className="border-2 bg-red-300">
+            loremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremloremlorem
+          </div>
         </div>
         <div>
           <h3>2</h3>
