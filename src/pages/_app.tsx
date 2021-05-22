@@ -10,10 +10,10 @@ import Navbar from '../components/Navbar'
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
-    <>
+    <div className="font-inter">
       <Navbar />
       <Component {...pageProps} />
-    </>
+    </div>
   )
 }
 

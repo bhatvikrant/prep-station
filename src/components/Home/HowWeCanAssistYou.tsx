@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 // REACT SLICK
 import Slider from 'react-slick'
 
@@ -46,20 +48,48 @@ const HowWeCanAssistYou: React.FC = () => {
   }
   return (
     <div>
-      <div className="my-8 text-center">
+      <div className="my-16 text-center">
         <h2 className="text-3xl font-semibold sm:text-4xl">
           How We Can Assist You
         </h2>
       </div>
-      <Slider {...settings}>
-        {howWeCanAssistYouData.map((data, idx) => (
-          <div key={idx} className="p-4 border h-60">
-            <p className="text-2xl italic font-bold leading-snug">
-              {data.label}
-            </p>
-          </div>
-        ))}
-      </Slider>
+
+      <div className="mx-8 md:mx-auto md:max-w-6xl">
+        <Slider {...settings}>
+          {howWeCanAssistYouData.map((data, idx) => (
+            <div
+              className="relative cursor-pointer hover:opacity-75 hover:shadow-lg"
+              key={idx}
+            >
+              <div className="filter brightness-50">
+                <Image
+                  src="/bg.jpg"
+                  layout="responsive"
+                  objectFit="cover"
+                  objectPosition="top"
+                  height={250}
+                  width={250}
+                />
+              </div>
+
+              <div className="absolute px-4 transform -translate-y-1/2 sm:px-0 top-1/2 md:left-1/2 md:-translate-x-1/2">
+                <div
+                  // className="flex items-center px-4 py-2 mt-8 bg-white rounded-2xl"
+                  className="text-xl italic font-bold leading-snug text-white"
+                >
+                  {/* <SearchIcon className="h-5 mr-2" />
+                <input
+                  type="text"
+                  className="w-full border-none outline-none"
+                  placeholder="Get information on colleges, exams and more..."
+                /> */}
+                  {data.label}
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   )
 }

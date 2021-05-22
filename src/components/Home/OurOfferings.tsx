@@ -18,7 +18,7 @@ const OurOfferings: React.FC = () => {
           >
             <p className="text-2xl font-bold text-gray-700">{offering.label}</p>
 
-            <ul className="my-6 text-xs list-disc list-inside">
+            <ul className="flex-shrink my-6 text-xs leading-6 list-disc list-inside">
               {offering.points.map((point, idxx) => (
                 <li key={idxx}>{point}</li>
               ))}
