@@ -2,7 +2,7 @@
 import Slider from 'react-slick'
 
 // DATA
-import { howWeCanAssistYouData } from './how-we-can-assist-you.data'
+import { howWeCanAssistYouData } from './data/how-we-can-assist-you.data'
 
 const HowWeCanAssistYou: React.FC = () => {
   const settings = {
@@ -47,7 +47,9 @@ const HowWeCanAssistYou: React.FC = () => {
   return (
     <div>
       <div className="my-8 text-center">
-        <h2 className="font-semibold sm:text-4xl">How We Can Assist You</h2>
+        <h2 className="text-3xl font-semibold sm:text-4xl">
+          How We Can Assist You
+        </h2>
       </div>
       <Slider {...settings}>
         {howWeCanAssistYouData.map((data, idx) => (
