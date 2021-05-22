@@ -8,7 +8,7 @@ const Landing: React.FC = () => {
     <div className="relative">
       <div className="filter brightness-50">
         <Image
-          src="/bg.jpg"
+          src="/custom-bg.png"
           layout="responsive"
           objectFit="cover"
           objectPosition="top"
@@ -17,12 +17,12 @@ const Landing: React.FC = () => {
         />
       </div>
 
-      <div className="absolute top-1/2 md:left-1/2 transform md:-translate-x-1/2 -translate-y-1/2 px-2">
-        <h1 className="sm:text-4xl font-bold text-white leading-snug bg-gradient-to-r from-red-500 inline md:px-6 decoration-clone">
+      <div className="absolute px-2 transform -translate-y-1/2 top-1/2 md:left-1/2 md:-translate-x-1/2">
+        <h1 className="inline font-bold leading-snug text-white sm:text-4xl bg-gradient-to-r from-red-500 md:px-6 decoration-clone">
           We Understand, We Help, We Solve, Because We Are One Of You
         </h1>
 
-        <div className="flex items-center  bg-white px-4 py-2 rounded-2xl mt-8">
+        <div className="flex items-center px-4 py-2 mt-8 bg-white rounded-2xl">
           <SearchIcon className="h-5 mr-2" />
           <input
             type="text"
