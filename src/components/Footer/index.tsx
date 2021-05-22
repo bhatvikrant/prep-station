@@ -38,49 +38,76 @@ const Footer: React.FC = () => {
             <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
               <div>
                 <h3 className="uppercase ">About</h3>
-                <a href="#" className="block mt-2 text-sm hover:underline">
+                <a
+                  href="#"
+                  className="block mt-2 text-sm hover:underline hover:text-red-500"
+                >
                   Company
                 </a>
-                <a href="#" className="block mt-2 text-sm hover:underline">
+                <a
+                  href="#"
+                  className="block mt-2 text-sm hover:underline hover:text-red-500"
+                >
                   community
                 </a>
-                <a href="#" className="block mt-2 text-sm hover:underline">
+                <a
+                  href="#"
+                  className="block mt-2 text-sm hover:underline hover:text-red-500"
+                >
                   Careers
                 </a>
               </div>
 
               <div>
                 <h3 className="uppercase ">Blog</h3>
-                <a href="#" className="block mt-2 text-sm hover:underline">
+                <a
+                  href="#"
+                  className="block mt-2 text-sm hover:underline hover:text-red-500"
+                >
                   Tec
                 </a>
-                <a href="#" className="block mt-2 text-sm hover:underline">
+                <a
+                  href="#"
+                  className="block mt-2 text-sm hover:underline hover:text-red-500"
+                >
                   Music
                 </a>
-                <a href="#" className="block mt-2 text-sm hover:underline">
+                <a
+                  href="#"
+                  className="block mt-2 text-sm hover:underline hover:text-red-500"
+                >
                   Videos
                 </a>
               </div>
 
               <div>
                 <h3 className="uppercase ">Products</h3>
-                <a href="#" className="block mt-2 text-sm hover:underline">
+                <a
+                  href="#"
+                  className="block mt-2 text-sm hover:underline hover:text-red-500"
+                >
                   Mega cloud
                 </a>
-                <a href="#" className="block mt-2 text-sm hover:underline">
+                <a
+                  href="#"
+                  className="block mt-2 text-sm hover:underline hover:text-red-500"
+                >
                   Aperion UI
                 </a>
-                <a href="#" className="block mt-2 text-sm hover:underline">
+                <a
+                  href="#"
+                  className="block mt-2 text-sm hover:underline hover:text-red-500"
+                >
                   Meraki UI
                 </a>
               </div>
 
               <div>
                 <h3 className="uppercase ">Contact</h3>
-                <span className="block mt-2 text-sm hover:underline">
+                <span className="block mt-2 text-sm hover:underline hover:text-red-500">
                   +1 526 654 8965
                 </span>
-                <span className="block mt-2 text-sm hover:underline">
+                <span className="block mt-2 text-sm hover:underline hover:text-red-500">
                   example@email.com
                 </span>
               </div>
@@ -90,11 +117,19 @@ const Footer: React.FC = () => {
 
         <hr className="h-px my-6 bg-gray-300 border-none" />
 
-        <div>
-          <p className="text-center text-gray-800">
-            © Brand 2020 - All rights reserved
-          </p>
-        </div>
+        <a
+          href="https://twitter.com/vikrantbhat1022"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div>
+            <p className="text-center text-gray-200">
+              Built by ©{' '}
+              <span className="hover:text-red-500">Vikrant Bhat</span>{' '}
+              {new Date().getFullYear()} - All rights reserved
+            </p>
+          </div>
+        </a>
       </div>
     </footer>
   )

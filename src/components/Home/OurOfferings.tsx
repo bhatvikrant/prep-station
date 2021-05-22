@@ -7,7 +7,9 @@ const OurOfferings: React.FC = () => {
   return (
     <div className="max-w-5xl mx-auto my-32">
       <div className="my-16 text-center">
-        <h2 className="text-3xl font-semibold sm:text-4xl">Our Offerings</h2>
+        <h2 className="text-2xl font-semibold xs:text-3xl md:text-4xl">
+          Our Offerings
+        </h2>
       </div>
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:grid-rows-2">

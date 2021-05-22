@@ -13,12 +13,11 @@ const HowWeCanAssistYou: React.FC = () => {
     // speed: 500,
     // slidesToShow: 1,
     // slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
     dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 5,
-    // slidesToScroll: 3
     responsive: [
       {
         breakpoint: 1024,
@@ -49,7 +48,7 @@ const HowWeCanAssistYou: React.FC = () => {
   return (
     <div>
       <div className="my-16 text-center">
-        <h2 className="text-3xl font-semibold sm:text-4xl">
+        <h2 className="text-2xl font-semibold xs:text-3xl md:text-4xl">
           How We Can Assist You
         </h2>
       </div>
@@ -73,16 +72,7 @@ const HowWeCanAssistYou: React.FC = () => {
               </div>
 
               <div className="absolute px-4 transform -translate-y-1/2 sm:px-0 top-1/2 md:left-1/2 md:-translate-x-1/2">
-                <div
-                  // className="flex items-center px-4 py-2 mt-8 bg-white rounded-2xl"
-                  className="text-xl italic font-bold leading-snug text-white"
-                >
-                  {/* <SearchIcon className="h-5 mr-2" />
-                <input
-                  type="text"
-                  className="w-full border-none outline-none"
-                  placeholder="Get information on colleges, exams and more..."
-                /> */}
+                <div className="text-xl italic font-bold leading-snug text-white">
                   {data.label}
                 </div>
               </div>
