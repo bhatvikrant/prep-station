@@ -16,6 +16,12 @@
   }
 } */
 
+@layer base {
+  .tw-section-heading {
+    @apply inline-block text-2xl font-semibold no-underline border-b border-red-500 sm:text-3xl md:text-4xl hover:border-transparent;
+  }
+}
+
 /* REACT SLICK ARROW CUSTOM CSS */
 .react__slick__slider__parent {
   position: relative;

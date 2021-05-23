@@ -75,9 +75,7 @@ const HowWeCanAssistYou: React.FC = () => {
   return (
     <div>
       <div className="my-16 text-center">
-        <h2 className="text-2xl font-semibold xs:text-3xl md:text-4xl">
-          How We Can Assist You
-        </h2>
+        <h2 className="tw-section-heading">How We Can Assist You</h2>
       </div>
 
       <div className="mx-8 md:mx-auto md:max-w-6xl">
