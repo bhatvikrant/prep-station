@@ -14,6 +14,7 @@ const Landing: React.FC = () => {
           objectPosition="top"
           height={250}
           width={500}
+          alt="Prep Station"
         />
       </div>
 

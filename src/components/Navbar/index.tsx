@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
   const [showSidebar, setShowSidebar] = useState<boolean>(false)
 
   return (
-    <div className="flex justify-between bg-black text-white px-8 py-4">
+    <div className="flex justify-between px-8 py-4 text-white bg-black">
       {/* ======= LOGO ======= */}
       <Link href="/">
         <a>
@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
               width="100"
               alt="Prep Station logo"
             />
-            <p className="font-bold text-xl md:text-2xl">Prep Station</p>
+            <p className="text-xl font-bold md:text-2xl">Prep Station</p>
           </div>
         </a>
       </Link>
@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* ======= NAV LINKS (DESKTOP) ======= */}
-      <div className="hidden md:flex items-center  space-x-8">
+      <div className="items-center hidden space-x-8 md:flex">
         {navLinks.map((link) => (
           <div key={link.label}>
             <Link href={link.url}>
@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
         ))}
 
         <Link href="/login">
-          <a className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded">Login</a>
+          <a className="px-4 py-2 bg-red-500 rounded hover:bg-red-600">Login</a>
         </Link>
       </div>
 
@@ -82,7 +82,7 @@ const Navbar: React.FC = () => {
 
           <div className="mt-4">
             <Link href="/login">
-              <a className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded text-white block text-center">
+              <a className="block px-4 py-2 text-center text-white bg-red-500 rounded hover:bg-red-600">
                 Login
               </a>
             </Link>

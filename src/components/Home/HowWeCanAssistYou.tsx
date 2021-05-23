@@ -95,6 +95,7 @@ const HowWeCanAssistYou: React.FC = () => {
                   objectPosition="top"
                   height={250}
                   width={250}
+                  alt="How We Can Assist You"
                 />
               </div>
 
