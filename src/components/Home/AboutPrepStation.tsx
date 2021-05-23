@@ -6,7 +6,7 @@ import { FaTwitter, FaLinkedin, FaFacebook } from 'react-icons/fa'
 
 const AboutPrepStation: React.FC = () => {
   return (
-    <section className="bg-white dark:bg-gray-800">
+    <section className="my-16 bg-white dark:bg-gray-800">
       <div className="container px-6 py-8 mx-auto">
         <div className="items-center lg:flex">
           <div className="lg:w-1/2">

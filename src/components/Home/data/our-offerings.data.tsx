@@ -37,8 +37,7 @@ export const ourOfferingsData: ourOfferingsDatatype[] = [
     icon: <ClipboardListIcon className="inline-block h-6 mr-2" />,
   },
   {
-    label:
-      'Let Us Uncomplicate It For You - Tell Us Your Doubts And We Will Get Them Cleared',
+    label: 'Let Us Uncomplicate It - Tell Us Your Doubts',
     points: [
       'Chat with our experts and ask all your queries',
       'Get the best answers after ample of research',
@@ -50,7 +49,7 @@ export const ourOfferingsData: ourOfferingsDatatype[] = [
   },
   {
     label:
-      "Know The Truth - Talk To Alumni Of The College Of Your Preference - Know What's Going On Inside",
+      "Know What's Going On Inside - Talk To Alumni Of The College Of Your Preference ",
     points: [
       'Get in touch with the alumni of colleges',
       'Get to know the ground reality',
