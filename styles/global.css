@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* REACT SLICK ARROW CUSTOM CSS */
 .react__slick__slider__parent {
   position: relative;
@@ -23,6 +22,7 @@
   z-index: 1;
 }
 
-.react__slick__slider__parent .slick-prev:before, .slick-next:before {
+.react__slick__slider__parent .slick-prev:before,
+.slick-next:before {
   color: black;
 }

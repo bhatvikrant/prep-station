@@ -14,8 +14,7 @@ const Footer: React.FC = () => {
               </div>
 
               <p className="max-w-md mt-2 text-gray-200 ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reiciendis, nisi! Id.
+                Your Destination For Information
               </p>
 
               <div className="flex mt-4 -mx-2">

@@ -4,6 +4,7 @@
 import Landing from '../components/Home/Landing'
 import HowWeCanAssistYou from '../components/Home/HowWeCanAssistYou'
 import OurOfferings from '../components/Home/OurOfferings'
+import AboutPrepStation from '../components/Home/AboutPrepStation'
 
 export const Home = (): JSX.Element => (
   <div className="">
@@ -11,6 +12,7 @@ export const Home = (): JSX.Element => (
 
     <HowWeCanAssistYou />
     <OurOfferings />
+    <AboutPrepStation />
   </div>
 )
 
