@@ -3,21 +3,47 @@ import Image from 'next/image'
 // REACT SLICK
 import Slider from 'react-slick'
 
+// ICONS
+import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa'
+
 // DATA
 import { howWeCanAssistYouData } from './data/how-we-can-assist-you.data'
 
+function PrevArrow(props: { className?: any; style?: any; onClick?: any }) {
+  const { className, style, onClick } = props
+  return (
+    <div
+      className={`${className}`}
+      style={{ ...style, display: 'block' }}
+      onClick={onClick}
+    >
+      <FaChevronCircleLeft />
+    </div>
+  )
+}
+function NextArrow(props: { className?: any; style?: any; onClick?: any }) {
+  const { className, style, onClick } = props
+  return (
+    <div
+      className={`${className}`}
+      style={{ ...style, display: 'block' }}
+      onClick={onClick}
+    >
+      <FaChevronCircleRight />
+    </div>
+  )
+}
+
 const HowWeCanAssistYou: React.FC = () => {
   const settings = {
-    // dots: true,
-    // infinite: true,
-    // speed: 500,
-    // slidesToShow: 1,
-    // slidesToScroll: 1,
     arrows: true,
     dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 5,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    className: 'react__slick__slider__parent',
     responsive: [
       {
         breakpoint: 1024,
@@ -26,6 +52,7 @@ const HowWeCanAssistYou: React.FC = () => {
           slidesToScroll: 3,
           infinite: true,
           dots: true,
+          arrows: true,
         },
       },
       {
@@ -54,10 +81,10 @@ const HowWeCanAssistYou: React.FC = () => {
       </div>
 
       <div className="mx-8 md:mx-auto md:max-w-6xl">
-        <Slider {...settings}>
+        <Slider {...settings} className="react__slick__slider__parent">
           {howWeCanAssistYouData.map((data, idx) => (
             <div
-              className="relative cursor-pointer hover:opacity-75 hover:shadow-lg"
+              className="relative cursor-pointer sm:p-4 hover:opacity-75 hover:shadow-lg"
               key={idx}
             >
               <div className="filter brightness-50">
