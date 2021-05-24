@@ -1,0 +1,24 @@
+name: Lighthouse Check
+on:
+  deployment_status:
+    branches:
+      - '*'
+
+jobs:
+  lighthouse-check:
+    runs-on: ubuntu-latest
+    if: github.event.deployment_status.state == 'success'
+    steps:
+      - uses: actions/checkout@master
+      - run: mkdir /tmp/artifacts
+      - name: Run Lighthouse
+        uses: foo-software/lighthouse-check-action@master
+        with:
+          accessToken: ${{ secrets.GITHUB_TOKEN }}
+          outputDirectory: /tmp/artifacts
+          urls: '${{ github.event.deployment_status.target_url }}'
+      - name: Upload artifacts
+        uses: actions/upload-artifact@master
+        with:
+          name: Lighthouse reports
+          path: /tmp/artifacts
