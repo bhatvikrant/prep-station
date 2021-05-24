@@ -3,7 +3,6 @@ on:
   deployment_status:
     branches:
       - '*'
-
 jobs:
   lighthouse-check:
     runs-on: ubuntu-latest
