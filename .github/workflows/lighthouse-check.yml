@@ -13,7 +13,7 @@ jobs:
       - name: Run Lighthouse
         uses: foo-software/lighthouse-check-action@master
         with:
-          commentUrl: https://api.github.com/repos/bhatvikrant/prep-station/pulls/2/reviews
+          commentUrl: https://api.github.com/repos/bhatvikrant/prep-station/commits/${{ github.sha }}/comments
           accessToken: ${{ secrets.LIGHTHOUSE_CHECK_GITHUB_ACCESS_TOKEN }}
           outputDirectory: /tmp/artifacts
           urls: '${{ github.event.deployment_status.target_url }}'
