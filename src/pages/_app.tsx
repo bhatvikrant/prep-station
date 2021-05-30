@@ -13,7 +13,7 @@ import Footer from '../components/Footer/index'
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
-    <div className="font-inter">
+    <div className="font-rubik">
       <Navbar />
       <Component {...pageProps} />
       <Footer />
