@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import Image from 'next/image'
 
 // GLOBAL CSS
 import 'slick-carousel/slick/slick.css'
@@ -16,6 +17,10 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       <Navbar />
       <Component {...pageProps} />
       <Footer />
+
+      <div className="fixed bottom-10 right-10 hover:opacity-90">
+        <Image src="/whatsapp-logo.svg" height="40px" width="40px" />
+      </div>
 
       <Head>
         <title>Prep Station</title>
