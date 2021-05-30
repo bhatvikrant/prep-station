@@ -23,11 +23,11 @@ const Navbar: React.FC = () => {
             <Image
               src="/logo.png"
               layout="fixed"
-              height="50"
-              width="100"
+              height="75"
+              width="150"
               alt="Prep Station logo"
             />
-            <p className="text-xl font-bold md:text-2xl">Prep Station</p>
+            {/* <p className="text-xl font-bold md:text-2xl">Prep Station</p> */}
           </div>
         </a>
       </Link>
