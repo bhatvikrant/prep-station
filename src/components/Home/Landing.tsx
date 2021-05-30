@@ -18,10 +18,10 @@ const Landing: React.FC = () => {
         />
       </div>
 
-      <div className="absolute px-2 transform -translate-y-1/2 top-1/2 md:left-1/2 md:-translate-x-1/2">
-        <h1 className="inline font-bold leading-snug text-white sm:text-4xl bg-gradient-to-r from-red-500 md:px-6 decoration-clone">
-          We Understand, We Help, We Solve, Because We Are One Of You
-        </h1>
+      <div className="absolute flex flex-col items-center justify-center w-full px-2 transform -translate-y-1/2 md:max-w-xl top-1/2 md:left-1/2 md:-translate-x-1/2">
+        <h2 className="landing__text">We Understand</h2>
+        <h2 className="landing__text">We Help</h2>
+        <h2 className="landing__text">We Solve</h2>
 
         <div className="flex items-center px-4 py-2 mt-8 bg-white rounded-2xl">
           <SearchIcon className="h-5 mr-2" />

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  .landing__text {
+    @apply font-bold leading-snug text-white sm:text-6xl bg-gradient-to-r from-red-500 md:px-6 decoration-clone mb-2
+  }
+}
+
 /* @layer base {
   @font-face {
     font-family: 'Inter';
