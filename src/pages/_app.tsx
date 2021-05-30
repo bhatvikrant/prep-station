@@ -18,7 +18,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       <Component {...pageProps} />
       <Footer />
 
-      <div className="fixed bottom-10 right-10 hover:opacity-90">
+      <div className="fixed cursor-pointer bottom-10 right-10 hover:opacity-90">
         <Image src="/whatsapp-logo.svg" height="40px" width="40px" />
       </div>
 

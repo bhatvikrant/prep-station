@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-  .landing__text {
+  .tw-section-heading {
+    @apply inline-block text-2xl font-semibold sm:text-3xl md:text-5xl;
+    /* @apply inline-block text-2xl font-semibold no-underline border-b border-red-500 sm:text-3xl md:text-4xl hover:border-transparent; */
+  }
+  .tw-landing__text {
     @apply font-bold leading-snug text-white sm:text-6xl bg-gradient-to-r from-red-500 md:px-6 decoration-clone mb-2;
   }
 }
@@ -21,12 +25,6 @@
     font-family: 'Inter';
   }
 } */
-
-@layer base {
-  .tw-section-heading {
-    @apply inline-block text-2xl font-semibold no-underline border-b border-red-500 sm:text-3xl md:text-4xl hover:border-transparent;
-  }
-}
 
 /* REACT SLICK ARROW CUSTOM CSS */
 .react__slick__slider__parent {
