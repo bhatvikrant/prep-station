@@ -10,7 +10,7 @@ const AboutPrepStation: React.FC = () => {
       <div className="container px-6 py-8 mx-auto">
         <div className="items-center lg:flex">
           <div className="lg:w-1/2">
-            <h2 className="tw-section-heading">About Prep Station</h2>
+            <h2 className="tw-section-heading">About PrepStation</h2>
 
             <p className="mt-4 text-sm text-gray-500 dark:text-gray-400 lg:max-w-md">
               PrepStation is an education consulting firm that provides guidance
