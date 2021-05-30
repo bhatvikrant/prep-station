@@ -85,9 +85,10 @@ const HowWeCanAssistYou: React.FC = () => {
               className="relative cursor-pointer sm:p-4 hover:opacity-75 hover:shadow-lg"
               key={idx}
             >
-              <div className="filter brightness-50">
+              {/* <div className="filter brightness-50"> */}
+              <div className="">
                 <Image
-                  src="/bg.jpg"
+                  src={data.imgPath}
                   layout="responsive"
                   objectFit="cover"
                   objectPosition="top"
@@ -97,11 +98,11 @@ const HowWeCanAssistYou: React.FC = () => {
                 />
               </div>
 
-              <div className="absolute px-4 transform -translate-y-1/2 sm:px-0 top-1/2 md:left-1/2 md:-translate-x-1/2">
+              {/* <div className="absolute px-4 transform -translate-y-1/2 sm:px-0 top-1/2 md:left-1/2 md:-translate-x-1/2">
                 <div className="text-xl italic font-bold leading-snug text-white">
                   {data.label}
                 </div>
-              </div>
+              </div> */}
             </div>
           ))}
         </Slider>
