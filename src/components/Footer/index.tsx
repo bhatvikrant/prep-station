@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
           <div className="w-full -mx-6 lg:w-2/5">
             <div className="px-6">
               <div>
-                <a href="#" className="text-xl font-bold hover:text-white ">
+                <a href="/" className="text-xl font-bold hover:text-white ">
                   Prep Station
                 </a>
               </div>
@@ -18,15 +18,15 @@ const Footer: React.FC = () => {
               </p>
 
               <div className="flex mt-4 -mx-2">
-                <a href="#" className="mx-2" aria-label="Linkden">
+                <a href="/" className="mx-2" aria-label="Linkden">
                   <FaLinkedin />
                 </a>
 
-                <a href="#" className="mx-2" aria-label="Facebook">
+                <a href="/" className="mx-2" aria-label="Facebook">
                   <FaFacebook />
                 </a>
 
-                <a href="#" className="mx-2" aria-label="Twitter">
+                <a href="/" className="mx-2" aria-label="Twitter">
                   <FaTwitter />
                 </a>
               </div>
@@ -38,19 +38,19 @@ const Footer: React.FC = () => {
               <div>
                 <h3 className="uppercase ">About</h3>
                 <a
-                  href="#"
+                  href="/"
                   className="block mt-2 text-sm hover:underline hover:text-red-500"
                 >
                   Company
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="block mt-2 text-sm hover:underline hover:text-red-500"
                 >
                   community
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="block mt-2 text-sm hover:underline hover:text-red-500"
                 >
                   Careers
@@ -60,19 +60,19 @@ const Footer: React.FC = () => {
               <div>
                 <h3 className="uppercase ">Blog</h3>
                 <a
-                  href="#"
+                  href="/"
                   className="block mt-2 text-sm hover:underline hover:text-red-500"
                 >
                   Tec
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="block mt-2 text-sm hover:underline hover:text-red-500"
                 >
                   Music
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="block mt-2 text-sm hover:underline hover:text-red-500"
                 >
                   Videos
@@ -82,19 +82,19 @@ const Footer: React.FC = () => {
               <div>
                 <h3 className="uppercase ">Products</h3>
                 <a
-                  href="#"
+                  href="/"
                   className="block mt-2 text-sm hover:underline hover:text-red-500"
                 >
                   Mega cloud
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="block mt-2 text-sm hover:underline hover:text-red-500"
                 >
                   Aperion UI
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="block mt-2 text-sm hover:underline hover:text-red-500"
                 >
                   Meraki UI
