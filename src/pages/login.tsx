@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 // CONTEXT
 import { useAuth } from '@/contexts/AuthContext'
@@ -14,11 +15,18 @@ import { errorNotification, successNotification } from 'src/toast'
 import OAuthProviders from '@/components/Auth/OAuthProviders'
 
 const Login: React.FC = () => {
-	const { login } = useAuth()
+	const router = useRouter()
+	const { login, currentUser } = useAuth()
 
 	const [email, setEmail] = useState<string>('')
 	const [password, setPassword] = useState<string>('')
 	const [loading, setLoading] = useState<boolean>(false)
+
+	useLayoutEffect(() => {
+		if (currentUser?.id) {
+			router.push('/')
+		}
+	}, [currentUser])
 
 	const initiateLogin = async () => {
 		if (!email) {

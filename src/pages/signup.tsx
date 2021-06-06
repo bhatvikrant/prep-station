@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useLayoutEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 // CONTEXT
 import { useAuth } from '@/contexts/AuthContext'
@@ -14,13 +15,21 @@ import { CircularProgress } from '@material-ui/core'
 import OAuthProviders from '@/components/Auth/OAuthProviders'
 
 const SignUp: React.FC = () => {
-	const { signup } = useAuth()
+	const router = useRouter()
+	const { signup, currentUser } = useAuth()
 
 	const [email, setEmail] = useState<string>('')
 	const [name, setName] = useState<string>('')
 	const [password, setPassword] = useState<string>('')
 	const [confirmPassword, setConfirmPassword] = useState<string>('')
 	const [loading, setLoading] = useState<boolean>(false)
+
+	useLayoutEffect(() => {
+		if (currentUser?.id) {
+			router.push('/')
+			successNotification('You are already Logged In!')
+		}
+	}, [currentUser])
 
 	const initiateSignup = async () => {
 		if (!name) {
