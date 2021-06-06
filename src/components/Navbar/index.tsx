@@ -12,7 +12,7 @@ import { Avatar, Popover, SwipeableDrawer } from '@material-ui/core'
 import { navLinks } from './nav-links.data'
 
 // CONTEXT
-import { useAuth } from '@/contexts/AuthContext'
+import { useAuth } from '@/lib/auth'
 
 const Navbar: React.FC = () => {
 	const [showSidebar, setShowSidebar] = useState<boolean>(false)
@@ -66,9 +66,9 @@ const Navbar: React.FC = () => {
 						</Link>
 					</div>
 				))}
-				{currentUser?.id ? (
+				{currentUser?.uid ? (
 					<Avatar
-						src={currentUser.profilePic}
+						src={currentUser.photoUrl}
 						aria-describedby={id}
 						onClick={handleClick}
 						className="cursor-pointer"
@@ -105,9 +105,9 @@ const Navbar: React.FC = () => {
 					))}
 
 					<div className="mt-4">
-						{currentUser?.id ? (
+						{currentUser?.uid ? (
 							<Avatar
-								src={currentUser.profilePic}
+								src={currentUser.photoUrl}
 								aria-describedby={id}
 								onClick={handleClick}
 								className="cursor-pointer"

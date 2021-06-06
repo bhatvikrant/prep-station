@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 // CONTEXT
-import { useAuth } from '@/contexts/AuthContext'
+import { useAuth } from '@/lib/auth'
 
 // TOAST
 import { errorNotification, successNotification } from 'src/toast'
@@ -27,7 +27,6 @@ const SignUp: React.FC = () => {
 	useLayoutEffect(() => {
 		if (currentUser?.id) {
 			router.push('/')
-			successNotification('You are already Logged In!')
 		}
 	}, [currentUser])
 

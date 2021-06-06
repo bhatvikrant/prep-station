@@ -2,7 +2,7 @@
 import { AiOutlineGoogle, AiOutlineTwitter } from 'react-icons/ai'
 
 // CONTEXT
-import { useAuth } from '@/contexts/AuthContext'
+import { useAuth } from '@/lib/auth'
 
 interface Props {
 	type: 'login' | 'signup'

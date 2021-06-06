@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 // CONTEXT
-import { useAuth } from '@/contexts/AuthContext'
+import { useAuth } from '@/lib/auth'
 
 // MUI
 import { CircularProgress } from '@material-ui/core'

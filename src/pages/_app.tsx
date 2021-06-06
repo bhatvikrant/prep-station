@@ -13,7 +13,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer/index'
 
 // CONTEXT
-import { AuthProvider } from '@/contexts/AuthContext'
+import { AuthProvider } from '@/lib/auth'
 
 // TOAST
 import { ToastContainer } from 'react-toastify'
