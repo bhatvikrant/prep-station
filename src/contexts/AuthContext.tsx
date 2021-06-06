@@ -1,3 +1,4 @@
+import firebase from 'firebase/app'
 import { createContext, useContext, useState, useEffect } from 'react'
 
 // FIREBASE
@@ -30,6 +31,13 @@ export const AuthProvider: React.FC = ({ children }) => {
 		return auth.signInWithEmailAndPassword(email, password)
 	}
 
+	const googlelogin = () => {
+		/**
+		 * Google login function
+		 */
+		return auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+	}
+
 	const logout = () => {
 		/**
 		 * Logout function
@@ -44,7 +52,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 		return auth.sendPasswordResetEmail(email)
 	}
 
-	const changePassword = (password: string) => {
+	const changepassword = (password: string) => {
 		/**
 		 * Change Password function
 		 */
@@ -66,7 +74,8 @@ export const AuthProvider: React.FC = ({ children }) => {
 		login,
 		logout,
 		resetpassword,
-		changePassword
+		changepassword,
+		googlelogin
 	}
 
 	return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>
