@@ -17,36 +17,16 @@ const firebaseConfig = {
 
 if (!firebase.apps.length) {
 	firebase.initializeApp(firebaseConfig)
+	// Check that `window` is in scope for the analytics module!
+	if (typeof window !== 'undefined') {
+		// Enable analytics. https://firebase.google.com/docs/analytics/get-started
+		if ('measurementId' in firebaseConfig) {
+			firebase.analytics()
+			firebase.performance()
+		}
+	}
+	/* eslint-disable */
+	console.log('Firebase was successfully init.')
 }
 
 export default firebase
-
-// let app
-
-// if (firebase.apps.length === 0) {
-// 	app = firebase.initializeApp(firebaseConfig)
-// } else {
-// 	app = firebase.app()
-// }
-
-// const auth = app.auth()
-
-// const db = firebase.firestore()
-// // const db = {users: firebase.firestore('users')}
-
-// export { app, auth, db }
-
-// export default function initFirebase() {
-// 	if (!firebase.apps.length) {
-// 		firebase.initializeApp(firebaseConfig)
-// 		// Check that `window` is in scope for the analytics module!
-// 		if (typeof window !== 'undefined') {
-// 			// Enable analytics. https://firebase.google.com/docs/analytics/get-started
-// 			if ('measurementId' in firebaseConfig) {
-// 				firebase.analytics()
-// 				firebase.performance()
-// 			}
-// 		}
-// 		console.log('Firebase was successfully init.')
-// 	}
-// }
