@@ -18,8 +18,8 @@ const SignUp: React.FC = () => {
 	const router = useRouter()
 	const { signup, currentUser } = useAuth()
 
-	const [email, setEmail] = useState<string>('')
 	const [name, setName] = useState<string>('')
+	const [email, setEmail] = useState<string>('')
 	const [password, setPassword] = useState<string>('')
 	const [confirmPassword, setConfirmPassword] = useState<string>('')
 	const [loading, setLoading] = useState<boolean>(false)
@@ -47,7 +47,7 @@ const SignUp: React.FC = () => {
 		try {
 			setLoading(true)
 
-			await signup(email, password)
+			await signup(name, email, password)
 			successNotification(`Hello, ${name}`)
 
 			setEmail('')

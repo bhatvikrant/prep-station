@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 // FIREBASE
-import firebase from 'firebase/app'
+import firebase from './firebase'
 
 // UTILS
 import { FormattedUserType, formatUser } from 'src/utils/mapFirebaseUserData'
@@ -47,11 +47,19 @@ export const AuthProvider: React.FC = ({ children }) => {
 		}
 	}
 
-	const signup = (email: string, password: string) => {
+	const signup = (name: string, email: string, password: string) => {
 		/**
 		 * Signup function
 		 */
-		return firebase.auth().createUserWithEmailAndPassword(email, password)
+		return firebase
+			.auth()
+			.createUserWithEmailAndPassword(email, password)
+			.then(response => {
+				const user = { ...response.user }
+				user.displayName = name
+				// @ts-ignore
+				handleUser(user)
+			})
 	}
 
 	const login = (email: string, password: string) => {
@@ -94,8 +102,13 @@ export const AuthProvider: React.FC = ({ children }) => {
 	}
 
 	useEffect(() => {
-		const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-			handleUser(user)
+		const unsubscribe = firebase.auth().onAuthStateChanged(rawUser => {
+			if (rawUser) {
+				// handleUser(rawUser)
+				setCurrentUser(formatUser(rawUser))
+			} else {
+				setCurrentUser(null)
+			}
 			setLoading(false)
 		})
 
