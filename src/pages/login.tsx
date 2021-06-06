@@ -49,10 +49,11 @@ const Login: React.FC = () => {
 					<div className="space-y-1 text-sm">
 						<label htmlFor="email">Email</label>
 						<input
+							autoFocus
 							type="text"
 							name="email"
 							id="email"
-							placeholder="Username"
+							placeholder="Email"
 							className="tw-form-input"
 							value={email}
 							onChange={e => setEmail(e.target.value)}
@@ -70,7 +71,9 @@ const Login: React.FC = () => {
 							onChange={e => setPassword(e.target.value)}
 						/>
 						<div className="flex justify-end text-xs text-gray-600">
-							<a href="#">Forgot Password?</a>
+							<Link href="/forgot-password">
+								<a>Forgot Password?</a>
+							</Link>
 						</div>
 					</div>
 					<button

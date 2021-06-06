@@ -58,6 +58,7 @@ const SignUp: React.FC = () => {
 					<div className="space-y-1 text-sm">
 						<label htmlFor="name">Name</label>
 						<input
+							autoFocus
 							type="text"
 							name="name"
 							id="name"

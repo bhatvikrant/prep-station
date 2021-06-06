@@ -37,6 +37,13 @@ export const AuthProvider: React.FC = ({ children }) => {
 		return auth.signOut()
 	}
 
+	const resetpassword = (email: string) => {
+		/**
+		 * Reset Password function
+		 */
+		return auth.sendPasswordResetEmail(email)
+	}
+
 	useEffect(() => {
 		const unsub = auth.onAuthStateChanged(user => {
 			setCurrentUser(user)
@@ -50,7 +57,8 @@ export const AuthProvider: React.FC = ({ children }) => {
 		currentUser,
 		signup,
 		login,
-		logout
+		logout,
+		resetpassword
 	}
 
 	return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>
