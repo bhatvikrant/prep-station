@@ -25,9 +25,16 @@ export const AuthProvider: React.FC = ({ children }) => {
 
 	const login = (email: string, password: string) => {
 		/**
-		 * Signup function
+		 * Login function
 		 */
 		return auth.signInWithEmailAndPassword(email, password)
+	}
+
+	const logout = () => {
+		/**
+		 * Logout function
+		 */
+		return auth.signOut()
 	}
 
 	useEffect(() => {
@@ -42,7 +49,8 @@ export const AuthProvider: React.FC = ({ children }) => {
 	const value = {
 		currentUser,
 		signup,
-		login
+		login,
+		logout
 	}
 
 	return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>

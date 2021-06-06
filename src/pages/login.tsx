@@ -27,8 +27,10 @@ const Login: React.FC = () => {
 
 		try {
 			setLoading(true)
+
 			await login(email, password)
 			successNotification(`You are now Logged In!`)
+
 			setEmail('')
 			setPassword('')
 		} catch (err) {

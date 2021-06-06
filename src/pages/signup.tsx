@@ -35,8 +35,10 @@ const SignUp: React.FC = () => {
 
 		try {
 			setLoading(true)
+
 			await signup(email, password)
 			successNotification(`Hello, ${name}`)
+
 			setEmail('')
 			setPassword('')
 			setConfirmPassword('')
