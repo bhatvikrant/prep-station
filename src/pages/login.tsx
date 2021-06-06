@@ -1,12 +1,42 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
+// CONTEXT
+import { useAuth } from '@/contexts/AuthContext'
+
+// MUI
+import { CircularProgress } from '@material-ui/core'
+
+// TOAST
+import { errorNotification, successNotification } from 'src/toast'
+
 const Login: React.FC = () => {
+	const { login } = useAuth()
+
 	const [email, setEmail] = useState<string>('')
 	const [password, setPassword] = useState<string>('')
+	const [loading, setLoading] = useState<boolean>(false)
 
-	const login = () => {
-		return
+	const initiateLogin = async () => {
+		if (!email) {
+			return errorNotification('Email is required')
+		}
+		if (!password) {
+			return errorNotification('Password is required')
+		}
+
+		try {
+			setLoading(true)
+			await login(email, password)
+			successNotification(`You are now Logged In!`)
+			setEmail('')
+			setPassword('')
+		} catch (err) {
+			errorNotification(err.message ?? 'Failed to login')
+			setLoading(false)
+		}
+
+		setLoading(false)
 	}
 
 	return (
@@ -41,8 +71,13 @@ const Login: React.FC = () => {
 							<a href="#">Forgot Password?</a>
 						</div>
 					</div>
-					<button className="w-full tw-primary-btn" onClick={login}>
-						Log In
+					<button
+						className={`w-full tw-primary-btn ${
+							loading && 'bg-red-300 hover:bg-red-300'
+						}`}
+						onClick={initiateLogin}
+						disabled={loading}>
+						Log In {loading && <CircularProgress className="ml-5" size={20} />}
 					</button>
 				</div>
 				<div className="flex items-center pt-4 space-x-1">

@@ -23,6 +23,13 @@ export const AuthProvider: React.FC = ({ children }) => {
 		return auth.createUserWithEmailAndPassword(email, password)
 	}
 
+	const login = (email: string, password: string) => {
+		/**
+		 * Signup function
+		 */
+		return auth.signInWithEmailAndPassword(email, password)
+	}
+
 	useEffect(() => {
 		const unsub = auth.onAuthStateChanged(user => {
 			setCurrentUser(user)
@@ -34,7 +41,8 @@ export const AuthProvider: React.FC = ({ children }) => {
 
 	const value = {
 		currentUser,
-		signup
+		signup,
+		login
 	}
 
 	return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>

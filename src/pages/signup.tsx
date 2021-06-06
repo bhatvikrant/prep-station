@@ -11,12 +11,7 @@ import { errorNotification, successNotification } from 'src/toast'
 import { CircularProgress } from '@material-ui/core'
 
 const SignUp: React.FC = () => {
-	const {
-		signup
-		// currentUser
-	} = useAuth()
-
-	// console.log('currentUser', currentUser)
+	const { signup } = useAuth()
 
 	const [email, setEmail] = useState<string>('')
 	const [name, setName] = useState<string>('')
@@ -42,6 +37,9 @@ const SignUp: React.FC = () => {
 			setLoading(true)
 			await signup(email, password)
 			successNotification(`Hello, ${name}`)
+			setEmail('')
+			setPassword('')
+			setConfirmPassword('')
 		} catch (err) {
 			errorNotification(err.message ?? 'Failed to create an account')
 			setLoading(false)
