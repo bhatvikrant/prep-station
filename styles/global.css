@@ -3,21 +3,21 @@
 @tailwind utilities;
 
 @layer base {
-  .tw-section-heading {
-    @apply inline-block text-2xl font-semibold sm:text-3xl md:text-5xl;
-  }
+	.tw-section-heading {
+		@apply inline-block text-2xl font-semibold sm:text-3xl md:text-5xl;
+	}
 
-  .tw-landing__text {
-    @apply font-bold leading-snug text-white sm:text-6xl bg-gradient-to-r from-red-500 md:px-6 decoration-clone mb-2;
-  }
+	.tw-landing__text {
+		@apply font-bold leading-snug text-white sm:text-6xl bg-gradient-to-r from-red-500 md:px-6 decoration-clone mb-2;
+	}
 
-  .tw-primary-btn {
-    @apply flex items-center justify-center px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600;
-  }
+	.tw-primary-btn {
+		@apply flex items-center justify-center px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600;
+	}
 
-  .tw-form-input {
-    @apply block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring;
-  }
+	.tw-form-input {
+		@apply block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring;
+	}
 }
 
 /* @layer base {
@@ -36,32 +36,32 @@
 
 /* REACT SLICK ARROW CUSTOM CSS */
 .react__slick__slider__parent {
-  position: relative;
+	position: relative;
 }
 
 .react__slick__slider__parent .slick-prev,
 .react__slick__slider__parent .slick-next {
-  position: absolute;
-  top: 50%;
+	position: absolute;
+	top: 50%;
 }
 .react__slick__slider__parent .slick-prev {
-  color: black;
-  z-index: 1;
+	color: black;
+	z-index: 1;
 }
 .react__slick__slider__parent .slick-next {
-  border-radius: 50%;
-  color: black;
-  z-index: 1;
+	border-radius: 50%;
+	color: black;
+	z-index: 1;
 }
 
 .react__slick__slider__parent .slick-prev:before,
 .slick-next:before {
-  color: black;
+	color: black;
 }
 
 /* DISABLE UP DOWN ARROWS ON NUMBER INPUT */
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }

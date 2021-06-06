@@ -12,26 +12,26 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer/index'
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
-  return (
-    <div className="font-rubik">
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
+	return (
+		<div className="font-rubik">
+			<Navbar />
+			<Component {...pageProps} />
+			<Footer />
 
-      <div className="fixed cursor-pointer bottom-10 right-10 hover:opacity-90">
-        <Image src="/whatsapp-logo.svg" height="40px" width="40px" />
-      </div>
+			<div className="fixed cursor-pointer bottom-10 right-10 hover:opacity-90">
+				<Image src="/whatsapp-logo.svg" height="40px" width="40px" />
+			</div>
 
-      <Head>
-        <title>Prep Station</title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-        <link rel="icon" type="image/png" href="/logo.png" />
-      </Head>
-    </div>
-  )
+			<Head>
+				<title>Prep Station</title>
+				<meta
+					name="viewport"
+					content="minimum-scale=1, initial-scale=1, width=device-width"
+				/>
+				<link rel="icon" type="image/png" href="/logo.png" />
+			</Head>
+		</div>
+	)
 }
 
 export default MyApp

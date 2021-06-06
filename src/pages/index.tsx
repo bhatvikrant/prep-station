@@ -7,13 +7,13 @@ import OurOfferings from '../components/Home/OurOfferings'
 import AboutPrepStation from '../components/Home/AboutPrepStation'
 
 export const Home = (): JSX.Element => (
-  <div className="">
-    <Landing />
+	<div className="">
+		<Landing />
 
-    <HowWeCanAssistYou />
-    <OurOfferings />
-    <AboutPrepStation />
-  </div>
+		<HowWeCanAssistYou />
+		<OurOfferings />
+		<AboutPrepStation />
+	</div>
 )
 
 export default Home
