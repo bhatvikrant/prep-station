@@ -6,13 +6,33 @@ import Image from 'next/image'
 import { MenuIcon } from '@heroicons/react/solid'
 
 // MUI
-import { SwipeableDrawer } from '@material-ui/core'
+import { Avatar, Popover, SwipeableDrawer } from '@material-ui/core'
 
 // DATA
 import { navLinks } from './nav-links.data'
 
+// CONTEXT
+import { useAuth } from '@/contexts/AuthContext'
+
 const Navbar: React.FC = () => {
 	const [showSidebar, setShowSidebar] = useState<boolean>(false)
+
+	const { currentUser, logout } = useAuth()
+
+	// console.log('currentUser', currentUser)
+
+	const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null)
+
+	const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+		setAnchorEl(event.currentTarget)
+	}
+
+	const handleClose = () => {
+		setAnchorEl(null)
+	}
+
+	const open = Boolean(anchorEl)
+	const id = open ? 'simple-popover' : undefined
 
 	return (
 		<div className="flex justify-between px-8 py-4 text-white bg-black">
@@ -46,10 +66,18 @@ const Navbar: React.FC = () => {
 						</Link>
 					</div>
 				))}
-
-				<Link href="/login">
-					<a className="px-4 py-2 bg-red-500 rounded hover:bg-red-600">Login</a>
-				</Link>
+				{currentUser?.id ? (
+					<Avatar
+						src={currentUser.profilePic}
+						aria-describedby={id}
+						onClick={handleClick}
+						className="cursor-pointer"
+					/>
+				) : (
+					<Link href="/login">
+						<a className="px-4 py-2 bg-red-500 rounded hover:bg-red-600">Login</a>
+					</Link>
+				)}
 			</div>
 
 			{/* ======= NAV LINKS (MOBILE) ======= */}
@@ -77,14 +105,50 @@ const Navbar: React.FC = () => {
 					))}
 
 					<div className="mt-4">
-						<Link href="/login">
-							<a className="block px-4 py-2 text-center text-white bg-red-500 rounded hover:bg-red-600">
-								Login
-							</a>
-						</Link>
+						{currentUser?.id ? (
+							<Avatar
+								src={currentUser.profilePic}
+								aria-describedby={id}
+								onClick={handleClick}
+								className="cursor-pointer"
+							/>
+						) : (
+							<Link href="/login">
+								<a className="block px-4 py-2 text-center text-white bg-red-500 rounded hover:bg-red-600">
+									Login
+								</a>
+							</Link>
+						)}
 					</div>
 				</div>
 			</SwipeableDrawer>
+
+			{/* ========= LOGGEDIN USER POPOVER DRAWER ========= */}
+			<Popover
+				id={id}
+				open={open}
+				anchorEl={anchorEl}
+				onClose={handleClose}
+				anchorOrigin={{
+					vertical: 'bottom',
+					horizontal: 'center'
+				}}
+				transformOrigin={{
+					vertical: 'top',
+					horizontal: 'center'
+				}}>
+				<div className="px-4 py-2 cursor-pointer">
+					<ul>
+						<li
+							onClick={async () => {
+								handleClose()
+								await logout()
+							}}>
+							Logout
+						</li>
+					</ul>
+				</div>
+			</Popover>
 		</div>
 	)
 }

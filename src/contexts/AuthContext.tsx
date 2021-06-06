@@ -1,5 +1,11 @@
-import firebase from 'firebase/app'
 import { createContext, useContext, useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
+
+// FIREBASE
+import firebase from 'firebase/app'
+
+// UTILS
+import { mapFirebaseUserData, mappedDataType } from 'src/utils/mapFirebaseUserData'
 
 // FIREBASE
 import { auth } from '../firebase'
@@ -14,7 +20,9 @@ export const useAuth = (): any => {
 }
 
 export const AuthProvider: React.FC = ({ children }) => {
-	const [currentUser, setCurrentUser] = useState<any>()
+	const router = useRouter()
+
+	const [currentUser, setCurrentUser] = useState<mappedDataType>()
 	const [loading, setLoading] = useState<boolean>(true)
 
 	const signup = (email: string, password: string) => {
@@ -42,6 +50,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 		/**
 		 * Logout function
 		 */
+		router.push('/')
 		return auth.signOut()
 	}
 
@@ -52,16 +61,16 @@ export const AuthProvider: React.FC = ({ children }) => {
 		return auth.sendPasswordResetEmail(email)
 	}
 
-	const changepassword = (password: string) => {
-		/**
-		 * Change Password function
-		 */
-		return currentUser.updatePassword(password)
-	}
+	// const changepassword = (password: string) => {
+	// 	/**
+	// 	 * Change Password function
+	// 	 */
+	// 	return currentUser?.updatePassword?.(password)
+	// }
 
 	useEffect(() => {
 		const unsub = auth.onAuthStateChanged(user => {
-			setCurrentUser(user)
+			setCurrentUser(mapFirebaseUserData(user))
 			setLoading(false)
 		})
 
@@ -74,7 +83,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 		login,
 		logout,
 		resetpassword,
-		changepassword,
+		// changepassword,
 		googlelogin
 	}
 
