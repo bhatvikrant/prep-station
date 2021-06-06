@@ -5,10 +5,18 @@
 @layer base {
   .tw-section-heading {
     @apply inline-block text-2xl font-semibold sm:text-3xl md:text-5xl;
-    /* @apply inline-block text-2xl font-semibold no-underline border-b border-red-500 sm:text-3xl md:text-4xl hover:border-transparent; */
   }
+
   .tw-landing__text {
     @apply font-bold leading-snug text-white sm:text-6xl bg-gradient-to-r from-red-500 md:px-6 decoration-clone mb-2;
+  }
+
+  .tw-primary-btn {
+    @apply flex items-center justify-center px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600;
+  }
+
+  .tw-form-input {
+    @apply block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring;
   }
 }
 
@@ -49,4 +57,11 @@
 .react__slick__slider__parent .slick-prev:before,
 .slick-next:before {
   color: black;
+}
+
+/* DISABLE UP DOWN ARROWS ON NUMBER INPUT */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
