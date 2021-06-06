@@ -17,7 +17,8 @@
 		"paths": {
 			"@/public/*": ["public/*"],
 			"@/components/*": ["src/components/*"],
-			"@/pages/*": ["src/pages/*"]
+			"@/pages/*": ["src/pages/*"],
+			"@/contexts/*": ["src/contexts/*"]
 		}
 	},
 	"exclude": ["node_modules", ".next", "out"],

@@ -1,13 +1,18 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
+// CONTEXT
+import { useAuth } from '@/contexts/AuthContext'
+
 const SignUp: React.FC = () => {
+	const { signup } = useAuth()
+
 	const [email, setEmail] = useState<string>('')
 	const [password, setPassword] = useState<string>('')
 	const [confirmPassword, setConfirmPassword] = useState<string>('')
 
-	const signup = () => {
-		return
+	const initiateSignup = () => {
+		signup(email, password)
 	}
 
 	return (
@@ -51,7 +56,7 @@ const SignUp: React.FC = () => {
 							onChange={e => setConfirmPassword(e.target.value)}
 						/>
 					</div>
-					<button className="w-full tw-primary-btn" onClick={signup}>
+					<button className="w-full tw-primary-btn" onClick={initiateSignup}>
 						Sign Up
 					</button>
 				</div>
