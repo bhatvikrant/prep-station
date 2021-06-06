@@ -24,7 +24,7 @@ const OurOfferings: React.FC = () => {
               ))}
             </ul>
 
-            <Link href="/">
+            <Link href={offering.url}>
               <a className="flex items-center justify-center px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600">
                 {offering.icon}
                 {offering.ctaText}

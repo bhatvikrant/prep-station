@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 // REACT SLICK
 import Slider from 'react-slick'
@@ -85,24 +86,19 @@ const HowWeCanAssistYou: React.FC = () => {
               className="relative cursor-pointer sm:p-4 hover:opacity-75 hover:shadow-lg"
               key={idx}
             >
-              {/* <div className="filter brightness-50"> */}
-              <div className="">
-                <Image
-                  src={data.imgPath}
-                  layout="responsive"
-                  objectFit="cover"
-                  objectPosition="top"
-                  height={250}
-                  width={250}
-                  alt="How We Can Assist You"
-                />
-              </div>
-
-              {/* <div className="absolute px-4 transform -translate-y-1/2 sm:px-0 top-1/2 md:left-1/2 md:-translate-x-1/2">
-                <div className="text-xl italic font-bold leading-snug text-white">
-                  {data.label}
-                </div>
-              </div> */}
+              <Link href={data.url}>
+                <a>
+                  <Image
+                    src={data.imgPath}
+                    layout="responsive"
+                    objectFit="cover"
+                    objectPosition="top"
+                    height={250}
+                    width={250}
+                    alt="How We Can Assist You"
+                  />
+                </a>
+              </Link>
             </div>
           ))}
         </Slider>

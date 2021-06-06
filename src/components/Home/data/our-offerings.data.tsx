@@ -11,6 +11,7 @@ interface ourOfferingsDatatype {
   points: string[]
   ctaText: string
   icon: JSX.Element
+  url: string
 }
 
 export const ourOfferingsData: ourOfferingsDatatype[] = [
@@ -24,6 +25,7 @@ export const ourOfferingsData: ourOfferingsDatatype[] = [
     ],
     ctaText: 'Evaluate Your Profile',
     icon: <IdentificationIcon className="inline-block h-6 mr-2" />,
+    url: '/evaluate-profile',
   },
   {
     label: 'Take An Aptitude Test',
@@ -35,6 +37,7 @@ export const ourOfferingsData: ourOfferingsDatatype[] = [
     ],
     ctaText: 'Take Test',
     icon: <ClipboardListIcon className="inline-block h-6 mr-2" />,
+    url: '/',
   },
   {
     label: 'Let Us Uncomplicate It - Tell Us Your Doubts',
@@ -46,6 +49,7 @@ export const ourOfferingsData: ourOfferingsDatatype[] = [
     ],
     ctaText: 'Chat With Us',
     icon: <ChatAlt2Icon className="inline-block h-6 mr-2" />,
+    url: '/',
   },
   {
     label:
@@ -57,5 +61,6 @@ export const ourOfferingsData: ourOfferingsDatatype[] = [
     ],
     ctaText: 'Get In Touch',
     icon: <ChatAltIcon className="inline-block h-6 mr-2" />,
+    url: '/',
   },
 ]
