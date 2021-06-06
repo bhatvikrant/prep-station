@@ -14,6 +14,7 @@ export const useAuth = (): any => {
 
 export const AuthProvider: React.FC = ({ children }) => {
 	const [currentUser, setCurrentUser] = useState<any>()
+	const [loading, setLoading] = useState<boolean>(true)
 
 	const signup = (email: string, password: string) => {
 		/**
@@ -23,7 +24,10 @@ export const AuthProvider: React.FC = ({ children }) => {
 	}
 
 	useEffect(() => {
-		const unsub = auth.onAuthStateChanged(user => setCurrentUser(user))
+		const unsub = auth.onAuthStateChanged(user => {
+			setCurrentUser(user)
+			setLoading(false)
+		})
 
 		return unsub
 	}, [])
@@ -33,5 +37,5 @@ export const AuthProvider: React.FC = ({ children }) => {
 		signup
 	}
 
-	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+	return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>
 }

@@ -6,6 +6,7 @@ import Image from 'next/image'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import '../../styles/global.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 // COMPONENTS
 import Navbar from '../components/Navbar'
@@ -14,9 +15,13 @@ import Footer from '../components/Footer/index'
 // CONTEXT
 import { AuthProvider } from '@/contexts/AuthContext'
 
+// TOAST
+import { ToastContainer } from 'react-toastify'
+
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
 	return (
 		<AuthProvider>
+			<ToastContainer />
 			<div className="font-rubik">
 				<Navbar />
 				<Component {...pageProps} />

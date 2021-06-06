@@ -4,15 +4,50 @@ import Link from 'next/link'
 // CONTEXT
 import { useAuth } from '@/contexts/AuthContext'
 
+// TOAST
+import { errorNotification, successNotification } from 'src/toast'
+
+// MUI
+import { CircularProgress } from '@material-ui/core'
+
 const SignUp: React.FC = () => {
-	const { signup } = useAuth()
+	const {
+		signup
+		// currentUser
+	} = useAuth()
+
+	// console.log('currentUser', currentUser)
 
 	const [email, setEmail] = useState<string>('')
+	const [name, setName] = useState<string>('')
 	const [password, setPassword] = useState<string>('')
 	const [confirmPassword, setConfirmPassword] = useState<string>('')
+	const [loading, setLoading] = useState<boolean>(false)
 
-	const initiateSignup = () => {
-		signup(email, password)
+	const initiateSignup = async () => {
+		if (!name) {
+			return errorNotification('Name is required')
+		}
+		if (!email) {
+			return errorNotification('Email is required')
+		}
+		if (!password) {
+			return errorNotification('Password is required')
+		}
+		if (password !== confirmPassword) {
+			return errorNotification('Passwords do not match')
+		}
+
+		try {
+			setLoading(true)
+			await signup(email, password)
+			successNotification(`Hello, ${name}`)
+		} catch (err) {
+			errorNotification(err.message ?? 'Failed to create an account')
+			setLoading(false)
+		}
+
+		setLoading(false)
 	}
 
 	return (
@@ -21,12 +56,24 @@ const SignUp: React.FC = () => {
 				<h1 className="text-2xl font-bold text-center">Sign Up</h1>
 				<div className="space-y-6">
 					<div className="space-y-1 text-sm">
-						<label htmlFor="email">Email</label>
+						<label htmlFor="name">Name</label>
 						<input
 							type="text"
+							name="name"
+							id="name"
+							placeholder="Full Name"
+							className="tw-form-input"
+							value={name}
+							onChange={e => setName(e.target.value)}
+						/>
+					</div>
+					<div className="space-y-1 text-sm">
+						<label htmlFor="email">Email</label>
+						<input
+							type="email"
 							name="email"
 							id="email"
-							placeholder="Username"
+							placeholder="Email"
 							className="tw-form-input"
 							value={email}
 							onChange={e => setEmail(e.target.value)}
@@ -56,8 +103,13 @@ const SignUp: React.FC = () => {
 							onChange={e => setConfirmPassword(e.target.value)}
 						/>
 					</div>
-					<button className="w-full tw-primary-btn" onClick={initiateSignup}>
-						Sign Up
+					<button
+						className={`w-full tw-primary-btn ${
+							loading && 'bg-red-300 hover:bg-red-300'
+						}`}
+						onClick={initiateSignup}
+						disabled={loading}>
+						Sign Up {loading && <CircularProgress className="ml-5" size={20} />}
 					</button>
 				</div>
 				<div className="flex items-center pt-4 space-x-1">
