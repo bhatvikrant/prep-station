@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-// CONTEXT
-import { useAuth } from '@/lib/auth'
 
 // MUI
 import { CircularProgress } from '@material-ui/core'
@@ -11,7 +9,6 @@ import { CircularProgress } from '@material-ui/core'
 import { errorNotification, successNotification } from 'src/toast'
 
 const ForgotPassword: React.FC = () => {
-	const { resetpassword } = useAuth()
 
 	const [email, setEmail] = useState<string>('')
 	const [loading, setLoading] = useState<boolean>(false)
@@ -24,7 +21,7 @@ const ForgotPassword: React.FC = () => {
 		try {
 			setLoading(true)
 
-			await resetpassword(email)
+			// await resetpassword(email)
 			successNotification(`Check your inbox for further instructions`)
 
 			setEmail('')
@@ -55,9 +52,8 @@ const ForgotPassword: React.FC = () => {
 						/>
 					</div>
 					<button
-						className={`w-full tw-primary-btn ${
-							loading && 'bg-red-300 hover:bg-red-300'
-						}`}
+						className={`w-full tw-primary-btn ${loading && 'bg-red-300 hover:bg-red-300'
+							}`}
 						onClick={initiateResetPassword}
 						disabled={loading}>
 						Reset Password {loading && <CircularProgress className="ml-5" size={20} />}

@@ -2,9 +2,6 @@ import { useLayoutEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-// CONTEXT
-import { useAuth } from '@/lib/auth'
-
 // MUI
 import { CircularProgress } from '@material-ui/core'
 
@@ -16,17 +13,16 @@ import OAuthProviders from '@/components/Auth/OAuthProviders'
 
 const Login: React.FC = () => {
 	const router = useRouter()
-	const { login, currentUser } = useAuth()
 
 	const [email, setEmail] = useState<string>('')
 	const [password, setPassword] = useState<string>('')
 	const [loading, setLoading] = useState<boolean>(false)
 
-	useLayoutEffect(() => {
-		if (currentUser?.id) {
-			router.push('/')
-		}
-	}, [currentUser])
+	// useLayoutEffect(() => {
+	// 	if (currentUser?.id) {
+	// 		router.push('/')
+	// 	}
+	// }, [currentUser])
 
 	const initiateLogin = async () => {
 		if (!email) {
@@ -39,7 +35,7 @@ const Login: React.FC = () => {
 		try {
 			setLoading(true)
 
-			await login(email, password)
+			// await login(email, password)
 			successNotification(`You are now Logged In!`)
 
 			setEmail('')
@@ -88,9 +84,8 @@ const Login: React.FC = () => {
 						</div>
 					</div>
 					<button
-						className={`w-full tw-primary-btn ${
-							loading && 'bg-red-300 hover:bg-red-300'
-						}`}
+						className={`w-full tw-primary-btn ${loading && 'bg-red-300 hover:bg-red-300'
+							}`}
 						onClick={initiateLogin}
 						disabled={loading}>
 						Log In {loading && <CircularProgress className="ml-5" size={20} />}

@@ -2,9 +2,6 @@ import { useState, useLayoutEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-// CONTEXT
-import { useAuth } from '@/lib/auth'
-
 // TOAST
 import { errorNotification, successNotification } from 'src/toast'
 
@@ -16,7 +13,6 @@ import OAuthProviders from '@/components/Auth/OAuthProviders'
 
 const SignUp: React.FC = () => {
 	const router = useRouter()
-	const { signup, currentUser } = useAuth()
 
 	const [name, setName] = useState<string>('')
 	const [email, setEmail] = useState<string>('')
@@ -24,11 +20,11 @@ const SignUp: React.FC = () => {
 	const [confirmPassword, setConfirmPassword] = useState<string>('')
 	const [loading, setLoading] = useState<boolean>(false)
 
-	useLayoutEffect(() => {
-		if (currentUser?.id) {
-			router.push('/')
-		}
-	}, [currentUser])
+	// useLayoutEffect(() => {
+	// 	if (currentUser?.id) {
+	// 		router.push('/')
+	// 	}
+	// }, [currentUser])
 
 	const initiateSignup = async () => {
 		if (!name) {
@@ -47,7 +43,7 @@ const SignUp: React.FC = () => {
 		try {
 			setLoading(true)
 
-			await signup(name, email, password)
+			// await signup(name, email, password)
 			successNotification(`Hello, ${name}`)
 
 			setEmail('')
@@ -116,9 +112,8 @@ const SignUp: React.FC = () => {
 						/>
 					</div>
 					<button
-						className={`w-full tw-primary-btn ${
-							loading && 'bg-red-300 hover:bg-red-300'
-						}`}
+						className={`w-full tw-primary-btn ${loading && 'bg-red-300 hover:bg-red-300'
+							}`}
 						onClick={initiateSignup}
 						disabled={loading}>
 						Sign Up {loading && <CircularProgress className="ml-5" size={20} />}

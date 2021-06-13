@@ -12,15 +12,13 @@ import 'react-toastify/dist/ReactToastify.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer/index'
 
-// CONTEXT
-import { AuthProvider } from '@/lib/auth'
 
 // TOAST
 import { ToastContainer } from 'react-toastify'
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
 	return (
-		<AuthProvider>
+		<>
 			<ToastContainer />
 			<div className="font-rubik">
 				<Navbar />
@@ -40,7 +38,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
 					<link rel="icon" type="image/png" href="/logo.png" />
 				</Head>
 			</div>
-		</AuthProvider>
+		</>
 	)
 }
 

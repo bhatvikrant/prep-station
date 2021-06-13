@@ -1,15 +1,11 @@
 // ICONS
 import { AiOutlineGoogle, AiOutlineTwitter } from 'react-icons/ai'
 
-// CONTEXT
-import { useAuth } from '@/lib/auth'
-
 interface Props {
 	type: 'login' | 'signup'
 }
 
 const OAuthProviders: React.FC<Props> = ({ type }) => {
-	const { googlelogin } = useAuth()
 
 	return (
 		<>
@@ -24,14 +20,14 @@ const OAuthProviders: React.FC<Props> = ({ type }) => {
 				<button
 					aria-label="Log in with Google"
 					className="p-3 rounded-sm"
-					onClick={googlelogin}>
-					<AiOutlineGoogle className="h-10 w-10" />
+					onClick={() => alert('coming soon')}>
+					<AiOutlineGoogle className="w-10 h-10" />
 				</button>
 				<button
 					aria-label="Log in with Twitter"
 					className="p-3 rounded-sm"
 					onClick={() => alert('coming soon')}>
-					<AiOutlineTwitter className="h-10 w-10" />
+					<AiOutlineTwitter className="w-10 h-10" />
 				</button>
 			</div>
 		</>

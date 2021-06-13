@@ -11,15 +11,8 @@ import { Avatar, Popover, SwipeableDrawer } from '@material-ui/core'
 // DATA
 import { navLinks } from './nav-links.data'
 
-// CONTEXT
-import { useAuth } from '@/lib/auth'
-
 const Navbar: React.FC = () => {
 	const [showSidebar, setShowSidebar] = useState<boolean>(false)
-
-	const { currentUser, logout } = useAuth()
-
-	// console.log('currentUser', currentUser)
 
 	const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null)
 
@@ -66,7 +59,7 @@ const Navbar: React.FC = () => {
 						</Link>
 					</div>
 				))}
-				{currentUser?.uid ? (
+				{/* {currentUser?.uid ? (
 					<Avatar
 						src={currentUser.photoUrl}
 						aria-describedby={id}
@@ -77,7 +70,7 @@ const Navbar: React.FC = () => {
 					<Link href="/login">
 						<a className="px-4 py-2 bg-red-500 rounded hover:bg-red-600">Login</a>
 					</Link>
-				)}
+				)} */}
 			</div>
 
 			{/* ======= NAV LINKS (MOBILE) ======= */}
@@ -105,7 +98,7 @@ const Navbar: React.FC = () => {
 					))}
 
 					<div className="mt-4">
-						{currentUser?.uid ? (
+						{/* {currentUser?.uid ? (
 							<Avatar
 								src={currentUser.photoUrl}
 								aria-describedby={id}
@@ -118,7 +111,7 @@ const Navbar: React.FC = () => {
 									Login
 								</a>
 							</Link>
-						)}
+						)} */}
 					</div>
 				</div>
 			</SwipeableDrawer>
@@ -142,7 +135,7 @@ const Navbar: React.FC = () => {
 						<li
 							onClick={async () => {
 								handleClose()
-								await logout()
+								// await logout()
 							}}>
 							Logout
 						</li>
