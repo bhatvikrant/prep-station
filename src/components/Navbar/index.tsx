@@ -11,7 +11,13 @@ import { Avatar, Popover, SwipeableDrawer } from '@material-ui/core'
 // DATA
 import { navLinks } from './nav-links.data'
 
+// NEXT AUTH
+import { signOut, useSession } from 'next-auth/client'
+
 const Navbar: React.FC = () => {
+
+	const [session] = useSession()
+
 	const [showSidebar, setShowSidebar] = useState<boolean>(false)
 
 	const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null)
@@ -59,9 +65,9 @@ const Navbar: React.FC = () => {
 						</Link>
 					</div>
 				))}
-				{/* {currentUser?.uid ? (
+				{session ? (
 					<Avatar
-						src={currentUser.photoUrl}
+						src={session.user?.image || ""}
 						aria-describedby={id}
 						onClick={handleClick}
 						className="cursor-pointer"
@@ -70,7 +76,7 @@ const Navbar: React.FC = () => {
 					<Link href="/login">
 						<a className="px-4 py-2 bg-red-500 rounded hover:bg-red-600">Login</a>
 					</Link>
-				)} */}
+				)}
 			</div>
 
 			{/* ======= NAV LINKS (MOBILE) ======= */}
@@ -98,9 +104,9 @@ const Navbar: React.FC = () => {
 					))}
 
 					<div className="mt-4">
-						{/* {currentUser?.uid ? (
+						{session ? (
 							<Avatar
-								src={currentUser.photoUrl}
+								src={session.user?.image || ""}
 								aria-describedby={id}
 								onClick={handleClick}
 								className="cursor-pointer"
@@ -111,7 +117,7 @@ const Navbar: React.FC = () => {
 									Login
 								</a>
 							</Link>
-						)} */}
+						)}
 					</div>
 				</div>
 			</SwipeableDrawer>
@@ -136,6 +142,7 @@ const Navbar: React.FC = () => {
 							onClick={async () => {
 								handleClose()
 								// await logout()
+								await signOut
 							}}>
 							Logout
 						</li>
