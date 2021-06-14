@@ -1,6 +1,8 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+// npx prisma db push <----------- run this whenever you make changes to this file
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -14,9 +16,6 @@ model User {
   id        Int      @id @default(autoincrement())
   name      String?
   email     String?  @unique
-  createdAt DateTime @default(now()) @map(name: "created_at")
-  updatedAt DateTime @updatedAt @map(name: "updated_at")
-  // posts         Post[]
-
-  @@map(name: "users")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
