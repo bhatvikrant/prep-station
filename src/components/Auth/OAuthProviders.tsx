@@ -23,7 +23,7 @@ const OAuthProviders: React.FC<Props> = ({ type }) => {
 				<button
 					aria-label="Log in with Google"
 					className="p-3 rounded-sm"
-					onClick={() => signIn('github')}>
+					onClick={() => signIn('github', { callbackUrl: '/' })}>
 					Github
 					{/* <AiOutlineGoogle className="w-10 h-10" /> */}
 				</button>

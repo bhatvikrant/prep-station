@@ -17,6 +17,7 @@ import { signOut, useSession } from 'next-auth/client'
 const Navbar: React.FC = () => {
 
 	const [session] = useSession()
+	console.log('sessio2n:', session)
 
 	const [showSidebar, setShowSidebar] = useState<boolean>(false)
 
@@ -32,6 +33,8 @@ const Navbar: React.FC = () => {
 
 	const open = Boolean(anchorEl)
 	const id = open ? 'simple-popover' : undefined
+
+	console.log('process.env.NEXTAUTH_URL:', process.env.NEXTAUTH_URL)
 
 	return (
 		<div className="flex justify-between px-8 py-4 text-white bg-black">
@@ -142,7 +145,7 @@ const Navbar: React.FC = () => {
 							onClick={async () => {
 								handleClose()
 								// await logout()
-								await signOut
+								await signOut({ callbackUrl: '/' })
 							}}>
 							Logout
 						</li>
