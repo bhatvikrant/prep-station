@@ -1,6 +1,9 @@
 // ICONS
 import { AiOutlineGoogle, AiOutlineTwitter } from 'react-icons/ai'
 
+// NEXT AUTH
+import { signIn } from 'next-auth/client'
+
 interface Props {
 	type: 'login' | 'signup'
 }
@@ -20,8 +23,9 @@ const OAuthProviders: React.FC<Props> = ({ type }) => {
 				<button
 					aria-label="Log in with Google"
 					className="p-3 rounded-sm"
-					onClick={() => alert('coming soon')}>
-					<AiOutlineGoogle className="w-10 h-10" />
+					onClick={() => signIn('github', { callbackUrl: '/' })}>
+					Github
+					{/* <AiOutlineGoogle className="w-10 h-10" /> */}
 				</button>
 				<button
 					aria-label="Log in with Twitter"

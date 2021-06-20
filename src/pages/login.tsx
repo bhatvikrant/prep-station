@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -11,18 +11,22 @@ import { errorNotification, successNotification } from 'src/toast'
 // COMPONENTS
 import OAuthProviders from '@/components/Auth/OAuthProviders'
 
+// NEXT AUTH
+import { useSession } from 'next-auth/client'
+
 const Login: React.FC = () => {
 	const router = useRouter()
+	const [session] = useSession()
 
 	const [email, setEmail] = useState<string>('')
 	const [password, setPassword] = useState<string>('')
 	const [loading, setLoading] = useState<boolean>(false)
 
-	// useLayoutEffect(() => {
-	// 	if (currentUser?.id) {
+	// useEffect(() => {
+	// 	if (session) {
 	// 		router.push('/')
 	// 	}
-	// }, [currentUser])
+	// }, [session])
 
 	const initiateLogin = async () => {
 		if (!email) {
