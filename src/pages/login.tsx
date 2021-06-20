@@ -17,7 +17,6 @@ import { useSession } from 'next-auth/client'
 const Login: React.FC = () => {
 	const router = useRouter()
 	const [session] = useSession()
-	console.log('session:', session)
 
 	const [email, setEmail] = useState<string>('')
 	const [password, setPassword] = useState<string>('')
