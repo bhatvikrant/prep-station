@@ -49,17 +49,6 @@ const Form: React.FC = () => {
 					/>
 				</div>
 				<div>
-					<label className="text-gray-700" htmlFor="12th-score">
-						12th SCORE
-					</label>
-					<input
-						id="12th-score"
-						type="number"
-						className="tw-form-input"
-						placeholder="Class 12th score"
-					/>
-				</div>
-				<div>
 					<label className="text-gray-700" htmlFor="12th-stream">
 						12th STREAM
 					</label>
@@ -71,16 +60,17 @@ const Form: React.FC = () => {
 					</select>
 				</div>
 				<div>
-					<label className="text-gray-700" htmlFor="grad-score">
-						GRADUATION SCORE
+					<label className="text-gray-700" htmlFor="12th-score">
+						12th SCORE
 					</label>
 					<input
-						id="grad-score"
+						id="12th-score"
 						type="number"
 						className="tw-form-input"
-						placeholder="Graduation score"
+						placeholder="Class 12th score"
 					/>
 				</div>
+
 				<div>
 					<label className="text-gray-700" htmlFor="grad-stream">
 						GRADUATION STREAM
@@ -92,6 +82,19 @@ const Form: React.FC = () => {
 						<option value="audi">Audi</option>
 					</select>
 				</div>
+
+				<div>
+					<label className="text-gray-700" htmlFor="grad-score">
+						GRADUATION SCORE
+					</label>
+					<input
+						id="grad-score"
+						type="number"
+						className="tw-form-input"
+						placeholder="Graduation score"
+					/>
+				</div>
+
 				<div>
 					<label className="text-gray-700" htmlFor="workExp">
 						WORK EXPERIENCE
