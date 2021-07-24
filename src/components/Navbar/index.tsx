@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
 
 	const { currentUser, logout } = useAuth()
 
-	console.log('currentUser', currentUser)
+	// console.log('currentUser', currentUser)
 
 	const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null)
 

@@ -19,7 +19,8 @@
 			"@/components/*": ["src/components/*"],
 			"@/pages/*": ["src/pages/*"],
 			"@/contexts/*": ["src/contexts/*"],
-			"@/lib/*": ["src/lib/*"]
+			"@/lib/*": ["src/lib/*"],
+			"@/static-data/*": ["src/static-data/*"]
 		}
 	},
 	"exclude": ["node_modules", ".next", "out"],
