@@ -10,15 +10,15 @@ import { IcollegeData } from '@/static-data/data';
 import { CircularProgressbar } from 'react-circular-progressbar';
 
 const Form: React.FC = () => {
-	const [name, setName] = useState<string>('Baba');
-	const [email, setEmail] = useState<string>('baba@em.com');
-	const [phoneNumber, setPhoneNumber] = useState<string>('123456789');
-	const [tenthScore, setTenthScore] = useState<string>('49');
-	const [twelfthStream, setTwelfthStream] = useState<string>('SCIENCE');
-	const [twelfthScore, setTwelfthScore] = useState<string>('87');
-	const [gradStream, setGradStream] = useState<string>('ENGINEERING');
-	const [gradScore, setGradScore] = useState<string>('83');
-	const [workExp, setWorkExp] = useState<string>('24');
+	const [name, setName] = useState<string>('');
+	const [email, setEmail] = useState<string>('');
+	const [phoneNumber, setPhoneNumber] = useState<string>('');
+	const [tenthScore, setTenthScore] = useState<string>('');
+	const [twelfthStream, setTwelfthStream] = useState<string>('');
+	const [twelfthScore, setTwelfthScore] = useState<string>('');
+	const [gradStream, setGradStream] = useState<string>('');
+	const [gradScore, setGradScore] = useState<string>('');
+	const [workExp, setWorkExp] = useState<string>('');
 
 	type collegeData = Omit<IcollegeData, "givenWeightage"> & { acceptancePercentage: number }
 
@@ -141,10 +141,10 @@ const Form: React.FC = () => {
 							onChange={({ target: { value } }) => setTwelfthStream(value)}
 							required
 						>
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
+							<option value="">--select--</option>
+							<option value="SCIENCE">SCIENCE</option>
+							<option value="COMMERCE">COMMERCE</option>
+							<option value="ARTS">ARTS</option>
 						</select>
 					</div>
 					<div>
@@ -171,10 +171,11 @@ const Form: React.FC = () => {
 							onChange={({ target: { value } }) => setGradStream(value)}
 							required
 						>
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
+							<option value="">--select--</option>
+							<option value="ENGINEERING">ENGINEERING</option>
+							<option value="COMMERCE">COMMERCE</option>
+							<option value="ARTS">ARTS</option>
+							<option value="CA/MEDICAL">CA or MEDICAL</option>
 						</select>
 					</div>
 
@@ -202,10 +203,11 @@ const Form: React.FC = () => {
 							onChange={({ target: { value } }) => setWorkExp(value)}
 							required
 						>
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
+							<option value="">--select--</option>
+							<option value={11}>less than 11 months</option>
+							<option value={24}>1-2 years</option>
+							<option value={36}>2-3 years</option>
+							<option value={100}>more than 3 years</option>
 						</select>
 					</div>
 
